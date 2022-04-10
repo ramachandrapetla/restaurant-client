@@ -1,0 +1,9 @@
+{
+  "SERVER_URL" : "http://localhost:3001/api",
+  "ROUTES" : {
+    "ALL_ADDRESS" : "/address/findAll",
+    "ADDRESS_BY_ID" : "/address/findById/",
+    "CREATE_ADDRESS" : "/address/create",
+    "UPDATE_ADDRESS" : "address/update"
+  }
+}
