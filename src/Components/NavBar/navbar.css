@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background: #ccc;
+}
+
+.nav-links {
+    display: flex;
+    padding: 10px 30px;
+    list-style-type: none;
+}
+
+.nav-item {
+    padding: 10px 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+}

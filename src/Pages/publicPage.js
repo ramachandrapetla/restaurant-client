@@ -1,12 +1,11 @@
 import {Address} from "../Components/Address/address";
-import FormComponent from "../Components/FormComponent/FormComponent";
+import FoodMenu from "../Components/FoodMenu/food-menu";
 
 const PublicPage = () => {
     return (
         <section id="public-page" >
-            <h1>This is the public page</h1>
-            <Address />
-            <FormComponent />
+            <h1 className="text-center p-10">MENU</h1>
+            <FoodMenu />
         </section>
     )
 }

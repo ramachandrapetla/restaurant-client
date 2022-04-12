@@ -14,7 +14,11 @@ const Address = () => {
 
     async function getAllData() {
         try {
-            const res = await apiClient.get(configData.ROUTES.ALL_ADDRESS);
+            const res = await apiClient.get(configData.ROUTES.ALL_ADDRESS, {
+                headers: {
+                    'x-access-token': "Bearer " + sessionStorage.userData.accessToken
+                }
+            });
             const result = {
                 status: res.status + "-" + res.statusText,
                 headers: res.headers,

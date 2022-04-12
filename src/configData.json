@@ -4,6 +4,9 @@
     "ALL_ADDRESS" : "/address/findAll",
     "ADDRESS_BY_ID" : "/address/findById/",
     "CREATE_ADDRESS" : "/address/create",
-    "UPDATE_ADDRESS" : "address/update"
+    "UPDATE_ADDRESS" : "/address/update",
+    "FOOD_MENU" : "/foodMenu/findAll",
+    "LOGIN": "/auth/login",
+    "BOOKING_LIST_CUST": "/booking/getBookingList"
   }
 }
