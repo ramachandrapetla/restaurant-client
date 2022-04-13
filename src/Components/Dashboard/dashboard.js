@@ -2,27 +2,24 @@ import { useState, useEffect } from "react";
 import { getUserData, isUserLoggedIn } from "../../utility/user-data-util";
 import FoodMenu from "../FoodMenu/food-menu";
 import { Redirect } from "react-router-dom";
-const Dashboard = ({isLoggedIn}) => {
-    const[userData, setUserData] = useState({});
-    
-    useEffect(() => {
-        const data = getUserData();
-        setUserData(data);
-    
-      }, []);
+import Auth from "../../Auth";
 
-    return (
-        <div>
-            {isUserLoggedIn() ?
+const Dashboard = ({isAuthenticated}) => {
+    const[userData, setUserData] = useState(Auth().getUserData());
+    
+
+    if(isAuthenticated)
+        return (
+            <div>
                 <div>
                     <h1>Welcome {userData.fname}</h1>
                     <div className="p-20-10">
                         <FoodMenu />
                     </div>
-                </div> : ""
-            }
-        </div>
-    )
+                </div>
+            </div>
+        )
+    else return <Redirect to="/" />
 }
 
 export default Dashboard;

@@ -1,0 +1,12 @@
+#public-page {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    max-height: calc(100vh -100px);
+}
+
+.login-section {
+    position: sticky;
+    top: 10px;;
+    padding-top: 20px;
+    height: 100vh
+}

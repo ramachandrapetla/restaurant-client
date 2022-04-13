@@ -1,20 +1,21 @@
 import {useState, useEffect} from 'react';
 import apiClient from '../../http-common';
 import configData from '../../configData.json';
-import { useHistory } from 'react-router-dom';
-import './login-register.css'
+import { Redirect, useHistory } from 'react-router-dom';
+import './login-register.css';
+import Auth from '../../Auth';
 
-const LoginForm = ({setLoginState}) => {
+const LoginForm = ({isAuthenticated, setIsAuthenticated}) => {
+
     const history = useHistory();
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState("");
+    const { login } = Auth();
 
-    useEffect(() => {
-        const loggedInUser = localStorage.getItem("userData");
-        if (loggedInUser)
-          history.push('/dashboard');
-      }, []);
+    // useEffect(() => {
+    //     
+    // }, []);
 
 
     const handleLoginForm = async () => {
@@ -31,30 +32,32 @@ const LoginForm = ({setLoginState}) => {
                 status: res.status,
                 data: res.data,
             };
-            setLoginState(true);
-            localStorage.setItem('userData', JSON.stringify(result.data));
-            history.push("/dashboard");
+            login(result.data);
+            setIsAuthenticated(true);
 
 
         } catch (err) {
-            setLoginState(false);
-            setError(err.response.data.message);
-            console.log(err.response.data);
-            alert("login failed: ", err.response.data.message);
+            //setError(err.response.data.message);
+            //console.log(err.response.data);
+            alert("login failed: ");
         }
     }
 
-    return (
-        <div className='login-container'>
-            <div className="login-wrapper">
-                <p>Please enter your credentials</p>
-                <input type= "text" placeholder = "username" onChange={(e) => setUserName(e.target.value)}/>
-                <input type= "password" placeholder = "password" onChange={(e) => setPassword(e.target.value)}/>
-                <button onClick={handleLoginForm}>Login</button>
-                <a href="#" >register</a>
+    if(isAuthenticated) {
+        return <Redirect to="/dashboard" />
+    }
+    else 
+        return (
+            <div className='login-container'>
+                <div className="login-wrapper">
+                    <p>Please enter your credentials</p>
+                    <input type= "text" placeholder = "username" onChange={(e) => setUserName(e.target.value)}/>
+                    <input type= "password" placeholder = "password" onChange={(e) => setPassword(e.target.value)}/>
+                    <button onClick={handleLoginForm}>Login</button>
+                    <a href="#" >register</a>
+                </div>
             </div>
-        </div>
-    )
+        )
 }
 
 export default LoginForm;

@@ -12,3 +12,23 @@
 .p-10 {
   padding: 10px;
 }
+
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+}
+
+.centered-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+}
+
+.centered-wrapper > * {
+  margin: 10px 0;
+  padding: 20px 10px;
+}
+.m-0 {
+  margin: 0;
+}

@@ -13,7 +13,7 @@ const FoodItem = ({itemId, itemDesc, itemName, price}) => {
             <h1>{itemName}</h1>
             <p>{itemDesc}</p>
             <p><b>Price: ${price}</b></p>
-            <button onClick={() => handleAddToCart(itemId)}>Add to Cart</button>
+            <button className="item-cart-btn" onClick={() => handleAddToCart(itemId)}>Add to Cart</button>
         </div>
     )
 };
