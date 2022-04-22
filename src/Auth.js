@@ -26,6 +26,7 @@ export default function Auth() {
     setIsAuthenticated(false);
     localStorage.removeItem('token');
     localStorage.removeItem('userData');
+    localStorage.removeItem('order');
       
   }
 

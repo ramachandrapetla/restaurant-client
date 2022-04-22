@@ -26,14 +26,9 @@ const NavBar = ({isAuthenticated, setIsAuthenticated}) => {
                     <li className="nav-item"><a href="/profile">Profile</a></li>
                     <li className="nav-item"><a href="/bookings">Bookings</a></li>
                     <li className="nav-item"><a href="/orders">Orders</a></li>
-                    </> : <></>
-                }
-                {
-                    isAuthenticated ? 
-                    <>
-                        <li className="nav-item"><a href="/cart">cart</a></li>
-                        <li className="nav-item"><a href="#" onClick={handleLogout} >logout</a></li>
-                    </>: <></>
+                    <li className="nav-item"><a href="/cart">cart</a></li>
+                    <li className="nav-item"><a href="#" onClick={handleLogout} >logout</a></li>
+                    </> : <li className="nav-item"><a href="/login">login</a></li>
                 }
             </ul>
         </nav>

@@ -13,3 +13,28 @@
     margin: 10px 0;
     padding: 20px 10px;
 }
+
+
+.register-form-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.register-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+
+
+.form-input {
+    padding: 10px 20px;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.error-msg {
+    color: red;
+    font-weight: 700;;
+}

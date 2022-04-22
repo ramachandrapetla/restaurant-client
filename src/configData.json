@@ -7,6 +7,12 @@
     "UPDATE_ADDRESS" : "/address/update",
     "FOOD_MENU" : "/foodMenu/findAll",
     "LOGIN": "/auth/login",
-    "BOOKING_LIST_CUST": "/booking/getBookingList"
+    "MAKE_RESERVATION": "/booking/makeReservation",
+    "BOOKING_LIST": "/booking/getBookingList",
+    "BOOKING_LIST_CUST": "/booking/getBookingsById/",
+    "RETRIEVE_TABLES": "/tables/getAllTables",
+    "GET_AVAILABLE_TABLES": "/tables/getAllAvailableTables",
+    "REGISTER": "/user/createUser",
+    "GET_ORDERS": "/orders/get-orders/"
   }
 }

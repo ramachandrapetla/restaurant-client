@@ -54,7 +54,7 @@ const LoginForm = ({isAuthenticated, setIsAuthenticated}) => {
                     <input type= "text" placeholder = "username" onChange={(e) => setUserName(e.target.value)}/>
                     <input type= "password" placeholder = "password" onChange={(e) => setPassword(e.target.value)}/>
                     <button onClick={handleLoginForm}>Login</button>
-                    <a href="#" >register</a>
+                    <a href="/register" >register</a>
                 </div>
             </div>
         )

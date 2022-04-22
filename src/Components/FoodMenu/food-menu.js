@@ -8,10 +8,22 @@ const FoodMenu = () => {
 
     const [foodMenu, setFoodMenu] = useState(null);
     const [menuError, setMenuError] = useState(false);
+    const [cartData, setCartData] = useState({});
 
     useEffect(() => {
         getAllData();
+        loadState();
     }, []);
+
+    const loadState = () => {
+        var data = localStorage.getItem('order');
+        if(data)
+        {
+            console.log("Loaded state: ", data);
+            var parsedData = JSON.parse(data);
+            setCartData(parsedData);
+        }
+    }
 
     const formatResponse = (res) => {
         return JSON.stringify(res, null, 2);
@@ -45,6 +57,8 @@ const FoodMenu = () => {
                                 itemName = {foodItem.itemName}
                                 itemDesc = {foodItem.itemDesc}
                                 price = {foodItem.price}
+                                cartData={cartData}
+                                setCartData={setCartData}
                             />
                         )}
                     </div>
@@ -55,7 +69,6 @@ const FoodMenu = () => {
 
     return (
        <div>
-           <div>Food Menu</div>
             {renderFoodMenu()}
        </div>
     )

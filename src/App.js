@@ -12,6 +12,7 @@ import OrdersList from './Components/Orders/orders-list';
 import Cart from './Components/Cart/cart';
 import Auth from './Auth';
 import ProtectedRoute from './ProtectedRoute';
+import Register from './Components/auth/register';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
                 <Route exact path="/login">
                   <LoginForm isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}/>
                 </Route>
+                <Route exact path="/register" component={Register} />
                 <Route exact path="/dashboard" >
                   <Dashboard isAuthenticated={isAuthenticated}/>
                 </Route>

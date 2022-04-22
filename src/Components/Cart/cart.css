@@ -1,0 +1,28 @@
+.centeredDiv {
+    margin: 20px auto;
+    width: 50%;
+}
+
+.centeredDiv > * {
+    margin-top: 15px;
+}
+
+.submitBtn {
+    padding: 20px 30px;
+    background: green;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.aggregate-row {
+    border-top: 1px solid black;
+}
+
+.highlight {
+    font-size: 24px;
+    color: red;
+    font-weight: 700;
+}
