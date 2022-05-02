@@ -38,3 +38,9 @@
     color: red;
     font-weight: 700;;
 }
+
+.register-btn {
+    padding: 20px 10px;
+    color: white;
+    background: green;
+}

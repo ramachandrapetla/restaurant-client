@@ -13,6 +13,7 @@
     "RETRIEVE_TABLES": "/tables/getAllTables",
     "GET_AVAILABLE_TABLES": "/tables/getAllAvailableTables",
     "REGISTER": "/user/createUser",
-    "GET_ORDERS": "/orders/get-orders/"
+    "GET_ORDERS": "/orders/get-orders/",
+    "PLACE_ORDER": "/orders/place-order"
   }
 }

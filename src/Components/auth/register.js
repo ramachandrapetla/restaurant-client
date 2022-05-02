@@ -132,7 +132,10 @@ const Register = ({role}) => {
                         <label htmlFor="salary">Salary: </label>
                         <input className="form-input" name="salary" type="number" onChange={(e) => setUserData({...userData, salary: e.target.value})}/>
                         <label htmlFor="role">Role: </label>
-                        <input className="form-input" name="role" type="text" onChange={(e) => setUserData({...userData, role: e.target.value})}/>
+                        <select class-name="form-input" name="role" onChange={(e) => setUserData({...userData, role: e.target.value})} >
+                            <option value="C">Chef</option>
+                            <option value="W">Waiter</option>
+                        </select>  
                     </div> : <></>
                 }
                 <button className="register-btn" onClick={registerUser}>Register</button>
